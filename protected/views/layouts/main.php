@@ -4,12 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/custom-theme/jquery-ui-1.8.19.custom.css" media="print" />
-	
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-1.8.19.custom.min.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.wookmark.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"/>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/script.js"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -20,7 +15,17 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::link('EnjoyMyTribu', Yii::app()->request->baseUrl); ?></div>
+		<div id="logo"><?php echo CHtml::link('EnjoyMyTribu', Yii::app()->request->baseUrl) ?></div>
+		
+		<?php if(Yii::app()->user->isGuest) { ?>
+			<div class="header-menu link-ct"><?php echo CHtml::link('Sign up', array('/user/signup')) ?></div>
+			<div class="header-menu link-ct"><?php echo CHtml::link('Log in', array('/user/login')) ?></div>
+		<?php } else { ?>
+			<div class="header-menu link-ct"><?php echo CHtml::link('Log out', array('/user/logout')) ?></div>
+			<div class="header-menu" id="enjoy_btn">Enjoy</div>
+			<div style="float:right;height:12px;padding:14px 20px;font-weight:bold"> <?php echo Yii::app()->user->name ?></div>
+		<?php } ?> 
+			
 	</div><!-- header -->
 
 	<div class="content">
