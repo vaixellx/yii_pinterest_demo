@@ -1,0 +1,28 @@
+#enjoy_dialog {
+	width: 400px;
+	z-index: 1000;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: #FDFDFD;	
+	border:1px solid #DDDDDD;
+	
+}
+
+.dialog-header-bar {
+	height: 50px;
+	background-color: #FDFDFD;
+	border-bottom:4px solid #DDDDDD;
+	
+}
+
+.dialog-close-btn {
+	height: 50px;
+	width: 50px;
+	right: 0;
+	top: 0;
+	position: absolute;
+	border-left:1px solid #DDDDDD;
+	cursor: pointer;
+}
+

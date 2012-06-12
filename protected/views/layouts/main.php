@@ -32,18 +32,20 @@
 	</div><!-- header -->
 	
 	<div id="enjoy_dialog" style="display: none">
-		<div class="dialog-header-bar"><div class="diglog-close-btn"></div></div>
-			<div class="big-btn">
-				<?php echo CHtml::image('images/drawingpin1_blue.png'); ?> 
-<!-- 				<div><a id='enjoy_add_pin'>Add a pin</a></div> -->
+		<div class="dialog-header-bar">
+			<div class="enjoy-text">Enjoy</div>
+			<div class="dialog-close-btn"><?php echo CHtml::image('images/gtk_close.png', '', array('width'=>50, 'height'=>50)); ?></div>
+		</div>
+			<div class="big-btn link-ct">
+				<?php echo CHtml::image('images/drawingpin1_blue.png', '', array('width'=>50, 'height'=>50)); ?> 
 				<div><?php echo CHtml::link('Add a pin', array('/pin_items/add')); ?></div>
 			</div>
-			<div class="big-btn">
-				<?php echo CHtml::image('images/arrow_up-1.png'); ?>
+			<div class="big-btn link-ct">
+				<?php echo CHtml::image('images/arrow_up-1.png', '', array('width'=>50, 'height'=>50)); ?>
 				<div><?php echo CHtml::link('Upload a pin', array('/pin_items/add')); ?></div>
 			</div>
-			<div class="big-btn">
-				<?php echo CHtml::image('images/bulletin_board.png'); ?>
+			<div class="big-btn link-ct">
+				<?php echo CHtml::image('images/bulletin_board.png', '', array('width'=>50, 'height'=>50)); ?>
 				<div><?php echo CHtml::link('Create a board', array('/pin_items/add')); ?></div>
 			</div>
 	</div>
@@ -54,6 +56,8 @@
 
 	<div id="footer">
 	</div><!-- footer -->
+	
+	<div id='modal_layer'></div>
 
 </div><!-- page -->
 
