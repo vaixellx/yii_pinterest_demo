@@ -20,10 +20,17 @@ class LoginForm extends CFormModel
 	}
 
 	public function authenticate($attributes, $params) {
-		$this->identity = new UserIdentity;
-		$this->identity->email = $this->email;
+		$this->identity = new UserIdentity($this->email, $this->password);
+		
 		if(!$this->identity->authenticate()) {
 			$this->addError('authenticate', 'Email or password was invalid');
 		}
+	}
+	
+	public function login() {
+		if($this->identity == null)
+			$this->identity = new UserIdentity($this->email, $this->password);
+		
+		Yii::app()->user->login($this->identity);
 	}
 }

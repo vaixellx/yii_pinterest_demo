@@ -9,6 +9,7 @@ class UserController extends CController
 			$user->attributes = $_POST['LoginForm'];
 			
 			if($user->validate()) {
+				$user->login();
 				$this->redirect(array('/'));
 			}
 		
@@ -18,6 +19,11 @@ class UserController extends CController
 			'user' => $user		
 		));
 
+	}
+	
+	public function actionLogout() {
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->user->returnUrl);
 	}
 	
 	public function actionSignup() {

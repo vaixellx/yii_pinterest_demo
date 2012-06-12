@@ -3,21 +3,20 @@
 		private $id;
 		
 		public function authenticate() {
-			$record = User::model()->findByAttributes(array('email' => $this->email));
-			
+			$record = User::model()->findByAttributes(array('email' => $this->username));
+// 			
 			if($record == null) {
-				$this->errorCode = self::ERROR_USERNAME_INVLAID;
+				return false;
 			}
 			else  if($record->password != $this->password) {
-				$this->errorCode = self::ERROR_PASSWORD_INVALID;
+				return false;
 			}
 			else {
 				$this->id = $record->id;
 				$this->setState('name', "$record->firstname $record->lastname");
-				$this->errorCode = self::ERROR_NONE;
+				return true;
 			}
 			
-			return !$this->errorCode;
 		}
 		
 		public function getId() {
