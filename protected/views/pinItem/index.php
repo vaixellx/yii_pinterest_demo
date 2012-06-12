@@ -3,7 +3,7 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pin_items/like_button_handler.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pin_items/comment_button_handler.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pin_items/floated_element.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/yoxview/yoxview-init.js"></script>
+
 
 <!-- Pin new items -->
 <div style='height:35px'>

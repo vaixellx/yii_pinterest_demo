@@ -7,10 +7,9 @@ $(document).ready(function(){
 	// });
 // 	
 	$('#enjoy_btn').click(function() {
-		alert("hello");
-		// $('#enjoy_dialog').css('left', $(window).width()/2-150);
-		// $('#enjoy_dialog').css('top', $(window).height()/2-120);
-		// $('#enjoy_dialog').show();
+		 $('#enjoy_dialog').css('left', $(window).width()/2-150);
+		 $('#enjoy_dialog').css('top', $(window).height()/2-120);
+		 $('#enjoy_dialog').show();
 	});
 // 	
 });
