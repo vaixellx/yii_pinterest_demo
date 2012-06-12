@@ -14,10 +14,5 @@ $(document).ready(function(){
 		}
 	);
 	
-	$('.pin-images-container').yoxview({
-		autoHideMenu: false,
-		controlsInitialFadeTime: 200,
-		controlsInitialDisplayTime: 200
-	});
-	
+		
 });

@@ -42,19 +42,6 @@ input[type=text], input[type=password] {
 }
 
 input[type=submit], button, a.button {
-	/* IE10 Consumer Preview */ 
-	background-image: -ms-linear-gradient(top, #eeeeee 0%, #CCCCCC 100%);
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top, #eeeeee 0%, #CCCCCC 100%);
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #eeeeee 0%, #CCCCCC 100%);
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #CCCCCC));
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #eeeeee 0%, #CCCCCC 100%);
-	/* W3C Markup, IE10 Release Preview */ 
-	background-image: linear-gradient(to bottom, #eeeeee 0%, #CCCCCC 100%);
-	
 	border-radius: 3px;
 	border: 1px solid #bbbbbb;
 	font-size: 14px;
@@ -70,18 +57,6 @@ input[type=submit], button, a.button {
 }
 
 input[type=submit]:hover, button:hover, a.button:hover {
-	/* IE10 Consumer Preview */ 
-	background-image: -ms-linear-gradient(top, #dddddd 0%, #bbbbbb 100%);
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top, #dddddd 0%, #bbbbbb 100%);
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #dddddd 0%, #bbbbbb 100%);
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dddddd), color-stop(1, #bbbbbb));
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #dddddd 0%, #bbbbbb 100%);
-	/* W3C Markup, IE10 Release Preview */ 
-	background-image: linear-gradient(to bottom, #dddddd 0%, #bbbbbb 100%);
 	border: 1px solid #999999;
 	color: #222222;
 }
