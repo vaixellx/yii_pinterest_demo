@@ -18,7 +18,7 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::link('EnjoyMyTribu', Yii::app()->request->baseUrl) ?></div>
+		<div id="logo"><?php echo CHtml::link(Yii::app()->params['siteName'], Yii::app()->request->baseUrl) ?></div>
 		
 		<?php if(Yii::app()->user->isGuest) { ?>
 			<div class="header-menu link-ct"><?php echo CHtml::link('Sign up', array('/user/signup')) ?></div>

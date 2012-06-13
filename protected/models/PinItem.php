@@ -14,27 +14,28 @@
 				'user'=>array(self::BELONGS_TO, 'User', 'user_id'),
 				'board'=>array(self::BELONGS_TO, 'Board', 'board_id'),
 				'comments'=>array(self::HAS_MANY, 'Comment', 'pin_item_id'),
-				'pin_item_liked_users'=>array(self::HAS_MANY, 'PinItemLikedUser', 'pin_item_id'),
-				'liked_users'=>array(self::HAS_MANY, 'User', array('user_id'=>'id'), 'through'=> 'pin_item_liked_users'),
-				
+				'pinItemLikedUsers'=>array(self::HAS_MANY, 'PinItemLikedUser', 'pin_item_id'),
+				'likedUsers'=>array(self::HAS_MANY, 'User', array('user_id'=>'id'), 'through'=> 'pinItemLikedUsers'),
 			);
 		}
 		
-		public function rules() {
-			return array(
-				array('img_src, user_id', 'required'),
-				array('user_id, width, height', 'numerical'),
-				array('img_src', 'url')
-			);
-		}
-		
-		public function beforeSave() {
-			if ($this->isNewRecord) {
-				list($this->width, $this->height) = getimagesize($this->img_src);
-			}
+		public function like() {
+			// Save liked user
+			$pinItemLikedUser = new PinItemLikedUser;
+			$pinItemLikedUser->pin_item_id = $this->id;
+			$pinItemLikedUser->user_id = Yii::app()->user->id;
+			$pinItemLikedUser->save();
 			
-			return true;
-		} 
+			return count($this->liked_users);
+		}
 		
+		public function isLiked($userId) {
+			foreach($this->likedUsers as $likedUser) {
+				if($likedUser->id == $userId)
+					return true;
+			}			
+			
+			return false;
+		}
 	}
 ?>

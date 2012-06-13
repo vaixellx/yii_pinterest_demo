@@ -42,6 +42,7 @@ input[type=text], input[type=password] {
 }
 
 input[type=submit], button, a.button {
+	background-color: #dddddd;
 	border-radius: 3px;
 	border: 1px solid #bbbbbb;
 	font-size: 14px;
@@ -57,6 +58,7 @@ input[type=submit], button, a.button {
 }
 
 input[type=submit]:hover, button:hover, a.button:hover {
+	background-color: #cccccc;
 	border: 1px solid #999999;
 	color: #222222;
 }
@@ -70,28 +72,12 @@ textarea {
 	border: 1px solid #cccccc;
 }
 
-a.button {
-	height: 30px;
-}
 a:focus {
    	outline: none;
 }
 
-.mini {
-	height: 20px !important;
-	font-size: 10px;
-}
-
 div.input , div.submit {
 	padding: 0 25px 20px 15px;
-}
-
-.line-button {
-	padding: 0 0 15px 0;
-}
-.line-button div.submit {
-	float: left;
-	padding: 0 15px;
 }
 
 /* Style */

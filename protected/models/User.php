@@ -1,13 +1,6 @@
 <?php
 	class User extends CActiveRecord {
 		
-		public function rules() {
-			return array(
-				array(array('email', 'password', 'firstname', 'lastname'), 'required'),
-				array('email', 'email')
-			);
-		}
-	
 		public static function model($className=__CLASS__) {
 			return parent::model($className);
 		}
@@ -15,6 +8,22 @@
 		public function tableName() {
 			return 'users';
 		}
-	 
+	
+		public function relation() {
+			return array(
+				'pinItems' => array(self::HAS_MANY, 'PinItem', 'user_id'),
+				'comments' => array(self::HAS_MANY, 'Comment', 'user_id'),
+				'boards' => array(self::HAS_MANY, 'Board', 'user_id'),
+				'pinItemLikedUsers' => array(self::HAS_MANY, 'PinItemLikedUser', 'user_id'),
+				'likedPinItems' => array(self::HAS_MANY, 'PinItem', array('pin_item_id' => 'id'), 'through' => 'pinItemLikedUsers')
+			);
+		}
+	
+		public function rules() {
+			return array(
+				array(array('email', 'password', 'firstname', 'lastname'), 'required'),
+				array('email', 'email')
+			);
+		} 
 	}
 ?>

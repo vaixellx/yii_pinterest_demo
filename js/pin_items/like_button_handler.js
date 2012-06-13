@@ -4,9 +4,8 @@ $(document).ready(function(){
 		var pinItemId = pinItem.attr('pinItemId');
 		var clickedButton = this;
 		
-		$.post('pin_items/like', {'data[PinItem][id]': pinItemId}, function(data){
+		$.post('pinItem/like', {'liked_pin_item_id': pinItemId}, function(data){
 			$('.pin-like', pinItem).html(data + ' Likes');
-			$(clickedButton).button('option', 'disabled', true);
 		});
 			
 	});
