@@ -37,16 +37,16 @@
 			<div class="dialog-close-btn"><?php echo CHtml::image('images/gtk_close.png', '', array('width'=>50, 'height'=>50)); ?></div>
 		</div>
 			<div class="big-btn link-ct">
-				<?php echo CHtml::image('images/drawingpin1_blue.png', '', array('width'=>50, 'height'=>50)); ?> 
-				<div><?php echo CHtml::link('Add a pin', array('/pin_items/add')); ?></div>
+				<div class="dialog-icon"><?php echo CHtml::image('images/drawingpin1_blue.png', '', array('width'=>50, 'height'=>50)); ?></div> 
+				<div><?php echo CHtml::link('Add a pin', array('/pinItem/add')); ?></div>
 			</div>
 			<div class="big-btn link-ct">
-				<?php echo CHtml::image('images/arrow_up-1.png', '', array('width'=>50, 'height'=>50)); ?>
-				<div><?php echo CHtml::link('Upload a pin', array('/pin_items/add')); ?></div>
+				<div class="dialog-icon"><?php echo CHtml::image('images/arrow_up-1.png', '', array('width'=>50, 'height'=>50)); ?></div>
+				<div><?php echo CHtml::link('Upload a pin', array('/pinItem/add')); ?></div>
 			</div>
 			<div class="big-btn link-ct">
-				<?php echo CHtml::image('images/bulletin_board.png', '', array('width'=>50, 'height'=>50)); ?>
-				<div><?php echo CHtml::link('Create a board', array('/pin_items/add')); ?></div>
+				<div class="dialog-icon"><?php echo CHtml::image('images/bulletin_board.png', '', array('width'=>50, 'height'=>50)); ?></div>
+				<div><?php echo CHtml::link('Create a board', array('/board/add')); ?></div>
 			</div>
 	</div>
 	
