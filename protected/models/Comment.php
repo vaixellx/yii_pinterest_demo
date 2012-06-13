@@ -51,45 +51,11 @@ class Comment extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
+			'user'=>array(self::BELONGS_TO, 'User', 'user_id'),
+			'pin_item'=>array(self::BELONGS_TO, 'PinItem', 'pin_item_id')
 		);
 	}
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'ID',
-			'user_id' => 'User',
-			'pin_item_id' => 'Pin Item',
-			'message' => 'Message',
-			'created_at' => 'Created At',
-		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('pin_item_id',$this->pin_item_id);
-		$criteria->compare('message',$this->message,true);
-		$criteria->compare('created_at',$this->created_at,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+	
 }

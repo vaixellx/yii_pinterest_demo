@@ -1,6 +1,22 @@
+<<<<<<< HEAD
 <?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/wookmark.style.css') ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/pin_items/wookmark_style.js') ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/pin_items/like_button_handler.js') ?>
+=======
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/wookmark.style.css" media="screen, projection" />
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pin_items/wookmark_style.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pin_items/like_button_handler.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pin_items/comment_button_handler.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pin_items/floated_element.js"></script>
+
+
+<!-- Pin new items -->
+<div style='height:35px'>
+	<?php //echo $this->Flash->allMessage() ?>
+	<?php echo CHtml::link('Pin new items', 'add', array('class' => 'button', 'style' => 'float:right', 'iconPrimary' => 'ui-icon-pin-s')) ?>
+</div>
+<hr/>
+>>>>>>> e1e636c12919d76bed4f004c2fa7c0540d66000e
 
 <!-- Pin items display -->
 <div id='pinned-items-container'>
