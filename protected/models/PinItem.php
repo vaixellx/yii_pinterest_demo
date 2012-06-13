@@ -14,9 +14,8 @@
 				'user'=>array(self::BELONGS_TO, 'User', 'user_id'),
 				'board'=>array(self::BELONGS_TO, 'Board', 'board_id'),
 				'comments'=>array(self::HAS_MANY, 'Comment', 'pin_item_id'),
-				'pin_item_liked_users'=>array(self::HAS_MANY, 'PinItemLikedUser', 'pin_item_id'),
-				'liked_users'=>array(self::HAS_MANY, 'User', array('user_id'=>'id'), 'throght'=> 'pin_item_liked_users'),
-				
+				'pinItemLikedUsers'=>array(self::HAS_MANY, 'PinItemLikedUser', 'pin_item_id'),
+				'likedUsers'=>array(self::HAS_MANY, 'User', array('user_id'=>'id'), 'through'=> 'pinItemLikedUsers'),
 			);
 		}
 		
@@ -28,6 +27,15 @@
 			$pinItemLikedUser->save();
 			
 			return count($this->liked_users);
+		}
+		
+		public function isLiked($userId) {
+			foreach($this->likedUsers as $likedUser) {
+				if($likedUser->id == $userId)
+					return true;
+			}			
+			
+			return false;
 		}
 	}
 ?>

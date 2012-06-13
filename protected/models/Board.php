@@ -56,7 +56,7 @@ class Board extends CActiveRecord
 		return array(
 			'category'=>array(self::BELONGS_TO, 'Category', 'category_Id'),
 			'user'=>array(self::BELONGS_TO, 'User', 'user_id'),
-			'pin_items'=>array(self::HAS_MANY, 'PinItem', 'board_id'),
+			'pinItems'=>array(self::HAS_MANY, 'PinItem', 'board_id'),
 		);
 	}
 }

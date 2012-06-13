@@ -53,7 +53,7 @@ class Comment extends CActiveRecord
 	{
 		return array(
 			'user'=>array(self::BELONGS_TO, 'User', 'user_id'),
-			'pin_item'=>array(self::BELONGS_TO, 'PinItem', 'pin_item_id')
+			'pinItem'=>array(self::BELONGS_TO, 'PinItem', 'pin_item_id')
 		);
 	}
 
