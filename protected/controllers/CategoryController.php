@@ -4,7 +4,17 @@ class CategoryController extends CController
 {
 	public function actionAdd()
 	{
-		$this->render('add');
+		$newCategory = new Category;
+		
+		if(isset($_POST['Category'])) {
+			$newCategory->attributes = $_POST['Category'];
+			if($newCategory->save()) {
+				$this->redirect(array('/'));
+			}
+		}
+		$this->render('add', array(
+			'category' => $newCategory
+		));
 	}
 
 	public function actionIndex()

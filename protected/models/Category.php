@@ -37,6 +37,7 @@ class Category extends CActiveRecord
 		return array(
 			array('title', 'required'),
 			array('title', 'length', 'max'=>30),
+			array('title', 'unique')
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			//array('id, name', 'safe', 'on'=>'search'),
