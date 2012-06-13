@@ -21,7 +21,7 @@
 	
 		public function rules() {
 			return array(
-				array(array('email', 'password', 'firstname', 'lastname'), 'required'),
+				array('email, password, firstname, lastname', 'required'),
 				array('email', 'email')
 			);
 		} 
