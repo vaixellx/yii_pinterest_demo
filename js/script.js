@@ -6,6 +6,10 @@ $(document).ready(function(){
 		});
 	});
 	
+	$('.disabled-button').click(function(){
+		return false;
+	});
+	
 	$('#enjoy_btn').click(function() {
 		 $('#enjoy_dialog').css('left', $(window).width()/2-150);
 		 $('#enjoy_dialog').css('top', $(window).height()/2-120);

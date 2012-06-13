@@ -29,9 +29,8 @@ class PinItemController extends CController
 		if(isset($_POST['liked_pin_item_id'])) {
 			$pinItemId = $_POST['liked_pin_item_id'];
 			$pinItem = PinItem::model()->findByPk($pinItemId);
-			$pinItem->like();
 			
-			echo count($pinItem->liked_users);
+			echo $pinItem->like(Yii::app()->user->id);
 			
 		}
 	}

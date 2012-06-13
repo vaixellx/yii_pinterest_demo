@@ -19,14 +19,13 @@
 			);
 		}
 		
-		public function like() {
-			// Save liked user
+		public function like($userId) {
 			$pinItemLikedUser = new PinItemLikedUser;
 			$pinItemLikedUser->pin_item_id = $this->id;
-			$pinItemLikedUser->user_id = Yii::app()->user->id;
+			$pinItemLikedUser->user_id = $userId;
 			$pinItemLikedUser->save();
 			
-			return count($this->liked_users);
+			return count($this->likedUsers);
 		}
 		
 		public function isLiked($userId) {
