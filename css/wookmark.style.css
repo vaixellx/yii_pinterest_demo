@@ -33,11 +33,26 @@
 }
 
 .pin-action {
-	background-color: #ffffff;	
 	position: absolute;
 	width: 230px;
-	padding: 10px;
+	padding: 20px 15px;
 	display: none;
+}
+
+.pin-action a {
+	text-decoration: none;
+	font-size: 11px;
+	background-color: #dddddd;
+	border-radius: 3px;
+	border: 1px solid #555555;
+	color: #333333;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+
+.pin-action a:hover {
+	background-color: #bbbbbb;
+	border-color: #333333;
 }
 
 .pin-description {

@@ -13,8 +13,15 @@ class PinItemController extends CController
 		));
 	}
 
-	public function actionLike($like) {
-		echo "Like is $like";
+	public function actionLike() {
+		if(isset($_POST['liked_pin_item_id'])) {
+			$pinItemId = $_POST['liked_pin_item_id'];
+			$pinItem = PinItem::model()->findByPk($pinItemId);
+			$pinItem->like();
+			
+			echo count($pinItem->liked_users);
+			
+		}
 	}
 
 }

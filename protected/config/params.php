@@ -2,7 +2,7 @@
 
 	return array(
 	
-		'siteName' => 'ENJOYMYTRIBU'
+		'siteName' => 'Yii - PinterestDemo'
 	
 	);
 ?>
