@@ -3,6 +3,7 @@
 	
 	<?php $form = $this->beginWidget('CActiveForm', array(
 		'enableAjaxValidation' => true,
+		'enableClientValidation' => true,
 		'errorMessageCssClass' => 'error-message'
 	)); ?>
 	

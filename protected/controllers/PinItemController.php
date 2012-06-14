@@ -4,6 +4,9 @@ class PinItemController extends CController
 {
 	public function actionAdd() {
 		$newPinItem = new PinItem;
+		$criteria = new CDbCriteria;
+		$criteria->order = 'title ASC';
+		$boards = Board::model()->findAll($criteria);
 		
 		if(isset($_POST['PinItem'])) {
 			$newPinItem->attributes = $_POST['PinItem'];
@@ -14,7 +17,8 @@ class PinItemController extends CController
 			}
 		}
 		$this->render('add', array(
-			'pinItem' => $newPinItem
+			'pinItem' => $newPinItem,
+			'boards' => $boards
 		));
 	}
 

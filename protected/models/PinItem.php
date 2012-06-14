@@ -19,6 +19,14 @@
 			);
 		}
 		
+		public function rules() {
+			return array(
+				array('img_src, user_id, board_id', 'required'),
+				array('user_id, board_id, width, height', 'numerical'),
+				array('img_src', 'url')
+			);
+		}
+		
 		public function like($userId) {
 			$pinItemLikedUser = new PinItemLikedUser;
 			$pinItemLikedUser->pin_item_id = $this->id;
