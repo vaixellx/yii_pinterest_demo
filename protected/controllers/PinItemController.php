@@ -1,6 +1,6 @@
 <?php
 
-class PinItemController extends CController
+class PinItemController extends Controller
 {
 	public function actionAdd() {
 		$newPinItem = new PinItem;

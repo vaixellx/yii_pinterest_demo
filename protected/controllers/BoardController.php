@@ -1,6 +1,6 @@
 <?php
 
-class BoardController extends CController
+class BoardController extends Controller
 {
 	public function actionAdd()
 	{

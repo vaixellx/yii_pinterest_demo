@@ -53,7 +53,12 @@ class Category extends CActiveRecord
 			'boards'=>array(self::HAS_MANY, 'Board', 'category_id'),
 		);
 	}
-
+	
+	public function attributeLabels() {
+		return array(
+			'title'=>Yii::t('app', 'model.category.title')
+		);
+	}
 	
 
 }

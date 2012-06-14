@@ -8,7 +8,7 @@
 	)); ?>
 	
 	<div class='input'>
-		<?php echo $form->labelEx($pinItem, 'Image Url') ?>
+		<?php echo $form->labelEx($pinItem, 'img_src') ?>
 		<?php echo $form->textField($pinItem, 'img_src') ?>
 		<?php echo $form->error($pinItem, 'img_src') ?>
 	</div>

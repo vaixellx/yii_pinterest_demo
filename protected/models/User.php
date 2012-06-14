@@ -25,5 +25,14 @@
 				array('email', 'email')
 			);
 		} 
+		
+		public function attributeLabels() {
+			return array(
+				'email'=>Yii::t('app', 'model.user.email'),
+				'password'=>Yii::t('app', 'model.user.password'),
+				'firstname'=>Yii::t('app', 'model.user.firstname'),
+				'lastname'=>Yii::t('app', 'model.user.lastname')				
+			);
+		}
 	}
 ?>

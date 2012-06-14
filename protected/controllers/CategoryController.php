@@ -1,6 +1,6 @@
 <?php
 
-class CategoryController extends CController
+class CategoryController extends Controller
 {
 	public function actionAdd()
 	{

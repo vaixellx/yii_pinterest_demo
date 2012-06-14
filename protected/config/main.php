@@ -9,6 +9,10 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
 
+	//default language
+	'sourceLanguage'=>'00',
+	'language'=>'en',
+	
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -48,6 +52,9 @@ return array(
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>'
 			),
 		),
+		'messages'=>array(
+			'class'=>'CPhpMessageSource'
+		), 
 		
 		// 'db'=>array(
 			// 'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
