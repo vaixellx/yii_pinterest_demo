@@ -3,12 +3,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-
+	
+	<script type="text/javascript">var baseUrl = '<?php echo Yii::app()->request->baseUrl ?>'</script>
 	<?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/style.css') ?>
 	<?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/custom.popup.css') ?>
 	<?php Yii::app()->clientScript->registerCoreScript('jquery') ?>
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/script.js') ?>
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.wookmark.min.js') ?>
+	
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -26,7 +28,10 @@
 		<?php } else { ?>
 			<div class="header-menu link-ct"><?php echo CHtml::link('Log out', array('/user/logout')) ?></div>
 			<div class="header-menu" id="enjoy_btn">Enjoy</div>
-			<div style="float:right;height:12px;padding:14px 20px;font-weight:bold"> <?php echo Yii::app()->user->name ?></div>
+			<div class='header-user-information'> 
+				<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'header-user-avartar')) ?>
+				<div class='header-user-name'><?php echo Yii::app()->user->name ?></div>
+			</div>
 		<?php } ?> 
 			
 	</div><!-- header -->

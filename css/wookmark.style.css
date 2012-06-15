@@ -39,7 +39,7 @@
 	display: none;
 }
 
-.pin-action a {
+.pin-action a, .pin-post-comment a {
 	text-decoration: none;
 	font-size: 11px;
 	background-color: #dddddd;
@@ -50,7 +50,7 @@
 	cursor: pointer;
 }
 
-.pin-action a:hover {
+.pin-action a:hover, .pin-post-comment a:hover {
 	background-color: #bbbbbb;
 	border-color: #333333;
 }
@@ -88,17 +88,23 @@
 	color: #888888;
 }
 
+.pin-comment-message {
+	white-space: pre-wrap;
+}
+
 .pin-new-comment-message {
 	margin: 0px;
 	height: 60px;
 	outline:none;
 	width: 180px;
 	border: 1px solid #cccccc;
+	word-wrap: normal;
+	 
 }
 
 .pin-post-comment {
 	text-align: right;
-	padding-top: 5px;
+	margin: 15px 0 5px 0;
 }
 
 #go_to_top {
