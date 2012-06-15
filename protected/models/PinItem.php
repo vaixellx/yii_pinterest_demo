@@ -1,5 +1,5 @@
 <?php
-	class PinItem extends CActiveRecord {
+	class PinItem extends Model {
 	
 		public static function model($className=__CLASS__) {
 			return parent::model($className);

@@ -7,7 +7,7 @@
  * @property string $id
  * @property string $name
  */
-class Category extends CActiveRecord
+class Category extends Model
 {
 	/**
 	 * Returns the static model of the specified AR class.

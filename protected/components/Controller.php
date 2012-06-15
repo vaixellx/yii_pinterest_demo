@@ -26,6 +26,13 @@ class Controller extends CController
 		parent::init();
 		Yii::import('ext.LanguagePicker.ELanguagePicker'); 
 		ELanguagePicker::setLanguage();
-		
+	}
+	
+	protected function performAjaxValidation($model) {
+		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
 	}
 }

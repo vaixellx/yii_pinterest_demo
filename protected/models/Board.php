@@ -10,7 +10,7 @@
  * @property string $description
  * @property integer $category_id
  */
-class Board extends CActiveRecord
+class Board extends Model
 {
 	/**
 	 * Returns the static model of the specified AR class.

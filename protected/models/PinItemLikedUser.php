@@ -1,6 +1,6 @@
 <?php
 
-	class PinItemLikedUser extends CActiveRecord {
+	class PinItemLikedUser extends Model {
 	
 		public static function model($className=__CLASS__) {
 			return parent::model($className);
