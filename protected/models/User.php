@@ -26,6 +26,14 @@
 			);
 		} 
 		
+		public function displayName() {
+			return $this->firstname.' '.$this->lastname;
+		}
+		
+		public function avartarPath() {
+			return ($this->avartar_src == null) ? Yii::app()->request->baseUrl.'/images/default_avartar.png' : $this->avartar_src;
+		}
+		
 		public function attributeLabels() {
 			return array(
 				'email'=>Yii::t('app', 'model.user.email'),

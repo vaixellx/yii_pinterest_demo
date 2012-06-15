@@ -13,7 +13,8 @@
 			}
 			else {
 				$this->id = $record->id;
-				$this->setState('name', "$record->firstname $record->lastname");
+				$this->setState('name', $record->displayName());
+				$this->setState('avartar_path', $record->avartarPath());
 				return true;
 			}
 			
