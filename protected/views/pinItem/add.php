@@ -14,6 +14,12 @@
 	</div>
 	
 	<div class='input'>
+		<?php echo $form->labelEx($pinItem, 'board') ?>
+		<?php echo $form->dropDownList($pinItem, 'board_id', CHtml::listData($boards, 'id', 'title'), array('prompt'=>'Select Board')) ?>
+		<?php echo $form->error($pinItem, 'board_id') ?>
+	</div>
+	
+	<div class='input'>
 		<?php echo $form->labelEx($pinItem, 'description') ?>
 		<?php echo $form->textArea($pinItem, 'description') ?>
 		<?php echo $form->error($pinItem, 'description') ?>

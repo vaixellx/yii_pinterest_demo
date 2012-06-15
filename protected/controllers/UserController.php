@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends CController
+class UserController extends Controller
 {
 	public function actionLogin() {
 		$user = new LoginForm;

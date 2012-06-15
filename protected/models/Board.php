@@ -59,4 +59,11 @@ class Board extends CActiveRecord
 			'pinItems'=>array(self::HAS_MANY, 'PinItem', 'board_id'),
 		);
 	}
+	
+	public function attributeLabels() {
+		return array(
+			'title'=>Yii::t('app', 'model.board.title'),
+			'category'=>Yii::t('app', 'model.board.category')
+		);
+	}
 }

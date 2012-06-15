@@ -19,6 +19,21 @@
 			);
 		}
 		
+		public function rules() {
+			return array(
+				array('img_src, user_id, board_id', 'required'),
+				array('user_id, board_id, width, height', 'numerical'),
+				array('img_src', 'url')
+			);
+		}
+		
+		public function attributeLabels() {
+		    return array(
+		        'img_src'=>Yii::t('app','model.pin_item.img_src'),
+		        'description'=>Yii::t('app', 'model.pin_item.description')
+		    );
+		}
+		
 		public function like($userId) {
 			$pinItemLikedUser = new PinItemLikedUser;
 			$pinItemLikedUser->pin_item_id = $this->id;

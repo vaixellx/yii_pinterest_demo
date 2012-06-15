@@ -1,10 +1,26 @@
 <?php
 
-class BoardController extends CController
+class BoardController extends Controller
 {
 	public function actionAdd()
 	{
-		$this->render('add');
+		$newBoard = new Board;
+		$criteria = new CDbCriteria;
+		$criteria->order = 'title ASC';
+		$categories = Category::model()->findAll($criteria);
+		
+		if(isset($_POST['Board'])) {
+			$newBoard->attributes = $_POST['Board'];
+			$newBoard->user_id = Yii::app()->user->id;
+			
+			if($newBoard->save()) {
+				$this->redirect(array('/'));
+			}	
+		}
+		$this->render('add', array(
+			'board' => $newBoard,
+			'categories' => $categories
+		));
 	}
 
 	public function actionEdit()
