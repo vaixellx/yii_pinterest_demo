@@ -18,7 +18,7 @@ class ELanguagePicker extends CPortlet
 	/**
 	 * @var string a title for the widget
 	 */
-    public $title = 'Language Picker';
+    public $title = 'Language';
     /**
      * 
      * @var string the default tag name of the container

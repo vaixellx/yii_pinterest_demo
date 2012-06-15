@@ -23,12 +23,12 @@
 		<?php if(Yii::app()->user->isGuest) { ?>
 			<div class="header-menu link-ct"><?php echo CHtml::link('Sign up', array('/user/signup')) ?></div>
 			<div class="header-menu link-ct"><?php echo CHtml::link('Log in', array('/user/login')) ?></div>
-			<div><?php $this->widget('ext.LanguagePicker.ELanguagePicker', array()); ?></div>
 		<?php } else { ?>
 			<div class="header-menu link-ct"><?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?></div>
 			<div class="header-menu" id="enjoy_btn">Enjoy</div>
 			<div style="float:right; height:12px; padding:14px 20px; font-weight:bold"> <?php echo Yii::app()->user->name ?></div>	
 		<?php } ?> 
+		<div><?php $this->widget('ext.LanguagePicker.ELanguagePicker', array('id'=>'language_picker')); ?></div>
 			
 	</div><!-- header -->
 	

@@ -235,3 +235,25 @@ div.input , div.submit {
 	opacity: 0.8 !important;
 	cursor: default !important;
 }
+
+#language_picker {
+/*	background-color: red;*/
+	float:right;
+	width: 120px;
+	margin: 15px 5px 0px 0px;
+	font-size: 12px;
+}
+
+#language_picker .portlet-content {
+/*	background-color: green;*/
+	float: left;
+	margin-top: -5px;
+	margin-left: 5px;
+}
+
+#language_picker .portlet-title {
+/*	background-color: blue;*/
+	float: left;
+	
+}
+
