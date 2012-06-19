@@ -5,6 +5,7 @@
 	<meta name="language" content="en" />
 	
 	<script type="text/javascript">var baseUrl = '<?php echo Yii::app()->request->baseUrl ?>'</script>
+	<?php $BASE_URL = Yii::app()->request->baseUrl ?>
 	<?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/style.css') ?>
 	<?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/custom.popup.css') ?>
 	<?php Yii::app()->clientScript->registerCoreScript('jquery') ?>
@@ -20,7 +21,7 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::link(Yii::app()->params['siteName'], Yii::app()->request->baseUrl) ?></div>
+		<div id="logo"><?php echo CHtml::link(Yii::app()->params['siteName'], $BASE_URL) ?></div>
 		
 		<?php if(Yii::app()->user->isGuest) { ?>
 			<div class="header-menu link-ct"><?php echo CHtml::link('Sign up', array('/user/signup')) ?></div>
@@ -40,18 +41,18 @@
 	<div id="enjoy_dialog" style="display: none">
 		<div class="dialog-header-bar">
 			<div class="enjoy-text">Enjoy</div>
-			<div class="dialog-close-btn"><?php echo CHtml::image('images/gtk_close.png', '', array('width'=>50, 'height'=>50)); ?></div>
+			<div class="dialog-close-btn"><?php echo CHtml::image($BASE_URL + '/images/gtk_close.png', '', array('width'=>50, 'height'=>50)); ?></div>
 		</div>
 			<div class="big-btn link-ct">
-				<div class="dialog-icon"><?php echo CHtml::image('images/drawingpin1_blue.png', '', array('width'=>50, 'height'=>50)); ?></div> 
+				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL + '/images/drawingpin1_blue.png', '', array('width'=>50, 'height'=>50)); ?></div> 
 				<div><?php echo CHtml::link('Add a pin', array('/pinItem/add')); ?></div>
 			</div>
 			<div class="big-btn link-ct">
-				<div class="dialog-icon"><?php echo CHtml::image('images/arrow_up-1.png', '', array('width'=>50, 'height'=>50)); ?></div>
+				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL + '/images/arrow_up-1.png', '', array('width'=>50, 'height'=>50)); ?></div>
 				<div><?php echo CHtml::link('Upload a pin', array('/pinItem/add')); ?></div>
 			</div>
 			<div class="big-btn link-ct">
-				<div class="dialog-icon"><?php echo CHtml::image('images/bulletin_board.png', '', array('width'=>50, 'height'=>50)); ?></div>
+				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL + '/images/bulletin_board.png', '', array('width'=>50, 'height'=>50)); ?></div>
 				<div><?php echo CHtml::link('Create a board', array('/board/add')); ?></div>
 			</div>
 	</div>
