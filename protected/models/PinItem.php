@@ -34,6 +34,11 @@
 		    );
 		}
 		
+		public function beforeSave() {
+			list($this->width, $this->height) = getimagesize($this->img_src);
+			return parent::beforeSave();
+		}
+		
 		public function like($userId) {
 			$pinItemLikedUser = new PinItemLikedUser;
 			$pinItemLikedUser->pin_item_id = $this->id;

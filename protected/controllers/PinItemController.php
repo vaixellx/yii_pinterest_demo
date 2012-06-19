@@ -9,7 +9,7 @@ class PinItemController extends Controller
 		$boards = Board::model()->findAll($criteria);
 		
 		if(isset($_POST['PinItem'])) {
-			$newPinItem->attributes = $_POST['PinItem'];
+			$newPinItem->setAttributes($_POST['PinItem'], false);
 			$newPinItem->user_id = Yii::app()->user->id;
 						
 			if($newPinItem->save()) {
