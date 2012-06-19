@@ -61,7 +61,5 @@
 
 	<?php } ?>  
 	
-	<div id='go_to_top'>
-		Top
-	</div>
+	<div id='go_to_top'></div>
 </div>
