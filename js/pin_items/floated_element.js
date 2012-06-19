@@ -4,4 +4,12 @@ $(document).ready(function(){
 			scrollTop: 0
 		}, 500);
 	});
+	
+	$(window).scroll(function() {
+		if($(window).scrollTop() >= $(window).height()/4)
+			$('#go_to_top').show();
+		else $('#go_to_top').animate({
+			height: 'toggle'
+		});
+	});
 });
