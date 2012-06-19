@@ -41,18 +41,18 @@
 	<div id="enjoy_dialog" style="display: none">
 		<div class="dialog-header-bar">
 			<div class="enjoy-text">Enjoy</div>
-			<div class="dialog-close-btn"><?php echo CHtml::image($BASE_URL + '/images/gtk_close.png', '', array('width'=>50, 'height'=>50)); ?></div>
+			<div class="dialog-close-btn"><?php echo CHtml::image($BASE_URL.'/images/gtk_close.png', '', array('width'=>50, 'height'=>50)); ?></div>
 		</div>
 			<div class="big-btn link-ct">
-				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL + '/images/drawingpin1_blue.png', '', array('width'=>50, 'height'=>50)); ?></div> 
+				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL.'/images/drawingpin1_blue.png', '', array('width'=>50, 'height'=>50)); ?></div> 
 				<div><?php echo CHtml::link('Add a pin', array('/pinItem/add')); ?></div>
 			</div>
 			<div class="big-btn link-ct">
-				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL + '/images/arrow_up-1.png', '', array('width'=>50, 'height'=>50)); ?></div>
+				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL.'/images/arrow_up-1.png', '', array('width'=>50, 'height'=>50)); ?></div>
 				<div><?php echo CHtml::link('Upload a pin', array('/pinItem/add')); ?></div>
 			</div>
 			<div class="big-btn link-ct">
-				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL + '/images/bulletin_board.png', '', array('width'=>50, 'height'=>50)); ?></div>
+				<div class="dialog-icon"><?php echo CHtml::image($BASE_URL.'/images/bulletin_board.png', '', array('width'=>50, 'height'=>50)); ?></div>
 				<div><?php echo CHtml::link('Create a board', array('/board/add')); ?></div>
 			</div>
 	</div>
