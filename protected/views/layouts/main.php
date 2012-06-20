@@ -24,8 +24,7 @@
 		<div id="logo"><?php echo CHtml::link(Yii::app()->params['siteName'], $BASE_URL) ?></div>
 		
 		<?php if(Yii::app()->user->isGuest) { ?>
-			<div class="header-menu link-ct"><?php echo CHtml::link('Sign up', array('/user/signup')) ?></div>
-			<div class="header-menu link-ct"><?php echo CHtml::link('Log in', array('/user/login')) ?></div>
+			<div class="header-menu" id='login_button'>Log in</div>
 		<?php } else { ?>
 			<div class="header-menu link-ct"><?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?></div>
 			<div class="header-menu" id="enjoy_btn">Enjoy</div>
@@ -74,6 +73,25 @@
 	</div><!-- footer -->
 	
 	<div id='modal_layer'></div>
+	<?php if(Yii::app()->user->isGuest) { ?>
+		<div id='login_form'>
+			<? $user = new Loginform ?>
+			<?php  $form = $this->beginWidget('CActiveForm', array(
+				'action' => array('/user/login')
+			)) ?>
+			
+			<?php echo $form->labelEx($user, 'email') ?>
+			<?php echo $form->textField($user, 'email') ?>
+		
+			<?php echo $form->labelEx($user, 'password') ?>
+			<?php echo $form->passwordField($user, 'password') ?>
+		
+			<?php echo CHtml::submitButton('Login') ?>
+			
+			<?php $this->endWidget() ?>
+			
+		</div>
+	<?php } ?>
 
 </div><!-- page -->
 
