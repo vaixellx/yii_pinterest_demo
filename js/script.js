@@ -26,5 +26,23 @@ $(document).ready(function(){
 		 });
 		 
 	});
-// 	
+	
+	$('#login_button').click(function(){
+		if($('#login_form').is(':visible')) {
+			$('#login_button').removeClass('active-state');
+			$('#login_form').hide();
+		}
+		else {
+			$('#login_button').addClass('active-state');
+			$('#login_form').fadeIn(200);
+		}
+	});
+	
+	$('#login_form').mouseleave(function(){
+		if($('#login_form').is(':visible')) {
+			$('#login_button').removeClass('active-state');
+			$('#login_form').hide();
+		}
+	});
+	
 });
