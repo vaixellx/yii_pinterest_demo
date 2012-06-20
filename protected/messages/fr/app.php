@@ -11,5 +11,10 @@ return array(
 	'model.user.lastname'=>'Nom de famille',
 	
 	'word.log_out'=>'Deconnexion',
+	'word.they_inspire_you' => 'Ils vous inspirent',
+	'word.categories' => 'Catégories',
+	'word.the_top' => 'Les TOP',
+	'word.shopping' => 'Shopping',
+	'word.myvip' => 'MYVIP'
 );
 ?>

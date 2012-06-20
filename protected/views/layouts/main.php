@@ -27,7 +27,7 @@
 			<div class="header-menu" id='login_button'>Log in</div>
 		<?php } else { ?>
 			<div class="header-menu link-ct"><?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?></div>
-			<div class="header-menu" id="enjoy_btn">Enjoy</div>
+			<div class="header-menu" id="enjoy_btn">Enjoy+</div>
 			<div class='header-user-information'> 
 				<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'header-user-avartar')) ?>
 				<div class='header-user-name'><?php echo Yii::app()->user->name ?></div>
