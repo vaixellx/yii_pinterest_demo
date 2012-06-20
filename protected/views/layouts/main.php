@@ -27,7 +27,7 @@
 			<div class="header-menu link-ct"><?php echo CHtml::link('Sign up', array('/user/signup')) ?></div>
 			<div class="header-menu link-ct"><?php echo CHtml::link('Log in', array('/user/login')) ?></div>
 		<?php } else { ?>
-			<div class="header-menu link-ct"><?php echo CHtml::link('Log out', array('/user/logout')) ?></div>
+			<div class="header-menu link-ct"><?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?></div>
 			<div class="header-menu" id="enjoy_btn">Enjoy</div>
 			<div class='header-user-information'> 
 				<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'header-user-avartar')) ?>
@@ -37,6 +37,15 @@
 		<div><?php $this->widget('ext.LanguagePicker.ELanguagePicker', array('id'=>'language_picker')); ?></div>
 			
 	</div><!-- header -->
+	<?php if(!Yii::app()->user->isGuest) { ?>
+		<div id="main_menu_toolbar">
+			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.myvip'), array('/user/logout')) ?></div>
+			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.shopping'), array('/user/logout')) ?></div>
+			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.the_top'), array('/user/logout')) ?></div>
+			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.categories'), array('/user/logout')) ?></div>
+			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.they_inspire_you'), array('/user/logout')) ?></div>	
+		</div>
+	<?php } ?>
 	
 	<div id="enjoy_dialog" style="display: none">
 		<div class="dialog-header-bar">

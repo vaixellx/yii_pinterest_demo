@@ -158,7 +158,6 @@ div.input , div.submit {
 	height: 40px;
 	background-color: #ffffff;
 	border-bottom: 1px solid #dddddd;
-	margin-bottom: 20px;
 }
 
 .header-menu {
@@ -274,5 +273,26 @@ div.input , div.submit {
 /*	background-color: blue;*/
 	float: left;
 	
+}
+#main_menu_toolbar {
+	height: 32px;
+	background-color: #EEEEEE;
+	margin-bottom: 20px;
+}
+.main-menu-btn {
+	float: right;
+	height: 12px;
+	padding: 14px 20px;
+	border-left: 1px solid #eeeeee;
+}
+
+.main-menu-btn:hover {
+	background-color: #f5f5f5;
+	cursor: pointer;
+}
+
+.main-menu-btn a {
+	text-decoration: none;
+	color: #555555;
 }
 
