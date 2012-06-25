@@ -182,7 +182,7 @@ div.input , div.submit {
 	float: right;
 	max-height: 40px;
 	padding: 5px;
-	border-left: 1px solid #eeeeee;
+	border-left: 1px solid #cccccc;
 }
 
 .header-user-name {
@@ -333,29 +333,19 @@ div.input , div.submit {
 	}
 
 /* ------------Login----------*/
-#login_button.active-state {
+#login_button.active-state, #profile_button.active-state{
 	border-width: 0 1px;
 	background-color: #eeeeee;
 	height: 13px;
 }
 
-#login_button.active-state:hover {
+#login_button.active-state:hover, #profile_button.active-state:hover {
 	background-color: #dddddd;
 }
 
 #login_form {
 	width: 200px;
 	height: 120px;
-	border: 1px solid #cccccc;
-	border-top-width: 0px;
-	background-color: #eeeeee;
-	position: absolute;
-	margin-top: 41px;
-	top: 0;
-	right: 0;
-	padding: 15px;
-	display: none;
-	z-index: 100;
 }
 
 #login_form input[type=text], #login_form input[type=password] {
@@ -375,4 +365,11 @@ div.input , div.submit {
 	float: right;
 	font-size: 10px;
 	padding: 3px;
+}
+
+.dropelmelement {
+	border: 1px solid #cccccc;
+	border-top-width: 0px;
+	background-color: #eeeeee;
+	padding: 15px;
 }

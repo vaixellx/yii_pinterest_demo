@@ -8,11 +8,13 @@
 	<?php $BASE_URL = Yii::app()->request->baseUrl ?>
 	<?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/style.css') ?>
 	<?php Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/custom.popup.css') ?>
+	<?php //Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/custom.combobox.style.css') ?>
+	
 	<?php Yii::app()->clientScript->registerCoreScript('jquery') ?>
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/script.js') ?>
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.wookmark.min.js') ?>
+	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.dropelm.js') ?>
 	
-
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -26,13 +28,14 @@
 		<?php if(Yii::app()->user->isGuest) { ?>
 			<div class="header-menu" id='login_button'>Log in</div>
 		<?php } else { ?>
-			<div class="header-menu link-ct"><?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?></div>
-			<div class="header-menu" id="enjoy_btn">Enjoy+</div>
-			<div class='header-user-information'> 
+			<div class='header-user-information' id='profile_button'> 
 				<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'header-user-avartar')) ?>
 				<div class='header-user-name'><?php echo Yii::app()->user->name ?></div>
 			</div>
+			<div class="header-menu" id="enjoy_btn">Enjoy+</div>
+			
 		<?php } ?> 
+		<div class="header-menu">About</div>
 		<div><?php $this->widget('ext.LanguagePicker.ELanguagePicker', array('id'=>'language_picker')); ?></div>
 			
 	</div><!-- header -->
@@ -67,8 +70,10 @@
 	</div><!-- footer -->
 	
 	<div id='modal_layer'></div>
+	
 	<?php if(Yii::app()->user->isGuest) { ?>
 		<div id='login_form'>
+						
 			<? $user = new Loginform ?>
 			<?php  $form = $this->beginWidget('CActiveForm', array(
 				'action' => array('/user/login')
@@ -83,10 +88,12 @@
 			<?php echo CHtml::submitButton('Login') ?>
 			
 			<?php $this->endWidget() ?>
-			
+	
 		</div>
+	<?php } else { ?>
+		<div id='profile_panel'></div>
 	<?php } ?>
-
+	
 </div><!-- page -->
 
 </body>
