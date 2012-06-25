@@ -57,4 +57,13 @@ $(document).ready(function(){
 		customCombo.insertAfter(elm);
 	});
 	
+	$('#main_menu_toolbar li').hover(function(){
+		$(this).addClass('active-state');
+		$('ul', this).slideDown(100);	
+	},function(){
+		$(this).removeClass('active-state');
+		$('ul', this).slideUp(100);
+	});
+	
+	
 });

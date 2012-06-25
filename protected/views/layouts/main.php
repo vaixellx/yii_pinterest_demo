@@ -39,15 +39,7 @@
 		<div><?php $this->widget('ext.LanguagePicker.ELanguagePicker', array('id'=>'language_picker')); ?></div>
 			
 	</div><!-- header -->
-	<?php if(!Yii::app()->user->isGuest) { ?>
-		<div id="main_menu_toolbar">
-			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.myvip'), array('/user/logout')) ?></div>
-			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.shopping'), array('/user/logout')) ?></div>
-			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.the_top'), array('/user/logout')) ?></div>
-			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.categories'), array('/user/logout')) ?></div>
-			<div class="main-menu-btn link-ct"><?php echo CHtml::link(Yii::t('app', 'word.they_inspire_you'), array('/user/logout')) ?></div>	
-		</div>
-	<?php } ?>
+	
 	
 	<div id="enjoy_dialog" style="display: none">
 		<div class="dialog-header-bar">
@@ -67,6 +59,8 @@
 				<div><?php echo CHtml::link('Create a board', array('/board/add')); ?></div>
 			</div>
 	</div>
+	
+	
 	
 	<div class="content">
 		<?php echo $content ?>
