@@ -51,6 +51,7 @@ class Category extends Model
 	{
 		return array(
 			'boards'=>array(self::HAS_MANY, 'Board', 'category_id'),
+			'pinItems'=>array(self::HAS_MANY, 'PinItem', array('id'=>'board_id'), 'through'=>'boards')
 		);
 	}
 	
