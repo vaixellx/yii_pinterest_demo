@@ -2,7 +2,7 @@
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/pin_items/wookmark_style.js') ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/pin_items/action_handler.js') ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/pin_items/floated_element.js') ?>
-
+<?php $this->widget('application.components.widgets.MainMenuWidget'); ?>
 <!-- Pin items display -->
 <div id='pinned-items-container'>
 	<?php foreach ($pinItems as $item) { ?>
