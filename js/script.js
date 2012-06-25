@@ -27,22 +27,34 @@ $(document).ready(function(){
 		 
 	});
 	
-	$('#login_button').click(function(){
-		if($('#login_form').is(':visible')) {
-			$('#login_button').removeClass('active-state');
-			$('#login_form').hide();
-		}
-		else {
-			$('#login_button').addClass('active-state');
-			$('#login_form').fadeIn(200);
-		}
-	});
+	if($('#login_button').is(':visible')) {
+		$('#login_form').dropelm({
+			buttonId: 'login_button',
+			expandSide: 'right',
+			buttonActiveCls: 'active-state',
+			hideMethod: 'hover'
+		});
+	}
 	
-	$('#login_form').mouseleave(function(){
-		if($('#login_form').is(':visible')) {
-			$('#login_button').removeClass('active-state');
-			$('#login_form').hide();
-		}
+	if($('#profile_button').is(':visible')) {
+		$('#profile_panel').dropelm({
+			buttonId: 'profile_button',
+			expandSide: 'right',
+			buttonActiveCls: 'active-state',
+			hideMethod: 'hover'
+		});
+	}
+	
+	// Styled all combo box
+	$('select').each(function(index, elm) {
+		selectTemplate = '<div class="custom-combobox"><div class="custom-combobox-button"></div></div>';
+		customCombo = $(selectTemplate);
+		realCombo = $(elm);
+		
+		customCombo.addClass(realCombo.attr('class'));
+		
+		
+		customCombo.insertAfter(elm);
 	});
 	
 });
