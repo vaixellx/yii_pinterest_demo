@@ -394,5 +394,24 @@ div.input , div.submit {
 
 #profile_panel a {
 	display: block;
-	padding: 5px;
+	padding: 7px 20px;
+	color: #555555;
+	text-decoration: none;
+}
+
+#profile_panel a.underline {
+	border-bottom: 1px solid #eeeeee;
+}
+
+#profile_panel a:hover {
+	background-color: #f5f5f5;
+}
+
+#profile_panel a.disabled {
+	color: #cccccc;
+}
+
+#profile_panel a.disabled:hover {
+	background-color: #ffffff;
+	font-weight: normal;
 }
