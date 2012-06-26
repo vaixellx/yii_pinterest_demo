@@ -22,11 +22,6 @@
   		// Initial element
   		this.addClass('dropelmelement');
   		$('#' + params['buttonId']).addClass('dropelmbutton');
-		this.css({
-			'position': 'absolute',
-			'top': 0,
-			'z-index': 1000
-		});
 		$('#' + params['buttonId']).attr('dropelmelementid', this.attr('id'));
 		
 		setMenuItemPosition(params['buttonId'], this, params['expandSide']);
@@ -37,13 +32,17 @@
 			elm = $('#' + $(this).attr('dropelmelementid'));
 			if(elm.is(':visible')) {
 				$(this).removeClass(params['buttonActiveCls']);
-				elm.hide();
+				elm.animate({
+					height: 'toggle'
+				}, 100);
 			}
 			else {
 				$('.dropelmbutton').removeClass('active-state');
 				$('.dropelmelement').hide();
 				$(this).addClass(params['buttonActiveCls']);
-				elm.fadeIn(200);
+				elm.animate({
+					height: 'toggle'
+				}, 100);
 			}
 			
 			return false;
@@ -75,7 +74,10 @@
 function setMenuItemPosition(buttonId, menuItem, expandSide) {
 	button = $('#' + buttonId);
 	menuItem.css(expandSide, 0);
-	menuItem.css('margin-top', button.position().top + button.outerHeight() + 1);
+	menuItem.css( {
+		'margin-top': button.position().top + button.outerHeight() + 1,
+		'min-width': button.outerWidth() + 20	
+	});
 	
 	if(expandSide === 'left') {
 		menuItem.css('margin-left', button.position().left);

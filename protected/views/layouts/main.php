@@ -28,9 +28,9 @@
 		<?php if(Yii::app()->user->isGuest) { ?>
 			<div class="header-menu" id='login_button'>Log in</div>
 		<?php } else { ?>
-			<div class='header-user-information' id='profile_button'> 
+			<div class='header-menu' id='profile_button' style='padding: 14px 5px;'> 
 				<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'header-user-avartar')) ?>
-				<div class='header-user-name'><?php echo Yii::app()->user->name ?></div>
+				<div class='header-user-name'><?php echo Yii::app()->user->name ?><span class='header-user-arrow-down'></span></div>
 			</div>
 			<div class="header-menu" id="enjoy_btn">Enjoy+</div>
 			
@@ -79,11 +79,9 @@
 				'action' => array('/user/login')
 			)) ?>
 			
-			<?php echo $form->labelEx($user, 'email') ?>
-			<?php echo $form->textField($user, 'email') ?>
+			<?php echo $form->textField($user, 'email', array('placeholder' => 'email address')) ?>
 		
-			<?php echo $form->labelEx($user, 'password') ?>
-			<?php echo $form->passwordField($user, 'password') ?>
+			<?php echo $form->passwordField($user, 'password', array('placeholder' => 'password')) ?>
 		
 			<?php echo CHtml::submitButton('Login') ?>
 			
@@ -91,7 +89,15 @@
 	
 		</div>
 	<?php } else { ?>
-		<div id='profile_panel'></div>
+		<div id='profile_panel'>
+			<a class='disabled'>Invite friends</a>
+			<a class='disabled underline'>Find friends</a>
+			<a class='disabled'>Boards</a>
+			<a class='disabled'>Tips</a>
+			<a class='disabled'>Enjoy</a>
+			<?php echo CHtml::link('Profile', array('/user/logout'), array('class' => 'underline')) ?>
+			<?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?>
+		</div>
 	<?php } ?>
 	
 </div><!-- page -->
