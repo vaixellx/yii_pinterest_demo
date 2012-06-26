@@ -8,55 +8,68 @@
 	<?php foreach ($pinItems as $item) { ?>
 	    <div class='pin-items' pinItemId='<?php echo $item->id ?>'>
   		  
-  		  <!-- Pin Action -->
-		  <?php if(!Yii::app()->user->isGuest) { ?>
-			  <div class='pin-action'>
-			  	<a class='<?php echo ($item->isLiked(Yii::app()->user->id) ? 'disabled-button' : 'like-button') ?>'>Like</a>
-	  			<a class='comment-button'>Add Comment</a>
-	  		  </div>
-  		  <?php } ?>
+  			<!-- Pin Action -->
+		    <?php if(!Yii::app()->user->isGuest) { ?>
+			    <div class='pin-action'>
+			  		<a class='<?php echo ($item->isLiked(Yii::app()->user->id) ? 'disabled-button' : 'like-button') ?>'>Like</a>
+	  				<a class='comment-button'>Add Comment</a>
+	  		  	</div>
+  		    <?php } ?>
   		  
-	      <!--Pinned Image-->
-	      <div class='pin-images-container' style='min-height: <?php echo 230 * $item->height / $item->width ?>px'>
- 		 	<img src='<?php echo $item->img_src ?>' class='pin-images'>    
-	      </div>
-	
-	      <!-- Description -->
-	      <div class='pin-description' style="line-height: 16px">
-	        <span class='pin-description-body'><?php echo $item->description ?></span>
-	      </div>
+	        <!--Pinned Image-->
+	        <div class='pin-images-container' style='min-height: <?php echo 230 * $item->height / $item->width ?>px'>
+ 		 		<img src='<?php echo $item->img_src ?>' class='pin-images'>    
+	        </div>
+
+			<!-- Pin Owner -->		  
+		    <div class='pin-owner'>
+				<?php echo CHtml::image($item->user->avartarPath(), 'UserAvartar', array('class' => 'pin-owner-avatar')) ?>
+				<div class='pin-comment-text'>
+					<div class='pin-comment-owner'>
+						<?php 
+							$formattedName = strtolower(str_replace(' ', '.', $item->user->displayName()));
+							echo CHtml::link($item->user->displayName(), array("user/$formattedName")); 
+						?>
+					</div>
+					<div class='pin-board'>onto <?php echo CHtml::link($item->board->title, '/board') ?></div>
+				</div>
+			</div>
+					
+	        <!-- Description -->
+	        <div class='pin-description' style="line-height: 16px">
+	        	<span class='pin-description-body'><?php echo $item->description ?></span>
+	        </div>
 	      
-	      <!-- Like & Comments count -->
-	      <div class='pin-like-and-comment'>
-	      	<span class='pin-like'><?php echo count($item->likedUsers) ?> Likes</span>
-	      	<span class='pin-comments-count'><?php echo count($item->comments) ?> Comments</span>
-		  </div>
+	        <!-- Like & Comments count -->
+	        <div class='pin-like-and-comment'>
+	      		<span class='pin-like'><?php echo count($item->likedUsers) ?> Likes</span>
+	      		<span class='pin-comments-count'><?php echo count($item->comments) ?> Comments</span>
+		    </div>
+
+		    <!-- Comment -->
+		    <div class='pin-comment-ct'>			  
+				<?php foreach($item->comments as $comment) { ?>
+					<?php $this->renderPartial('_pin_comment', array('comment' => $comment)) ?>
+				<?php } ?>
+		  	</div>
 		  
-		  <!-- Comment -->
-		  <div class='pin-comment-ct'>			  
-			  <?php foreach($item->comments as $comment) { ?>
-				  <?php $this->renderPartial('_pin_comment', array('comment' => $comment)) ?>
-			  <?php } ?>
-		  </div>
-		  
-		  <!-- New comment-->
-		  <?php if(!Yii::app()->user->isGuest) { ?>
-			  <!-- New comment box -->
-			  <div class='pin-comment hidden new-comment'>
+			<!-- New comment-->
+		  	<?php if(!Yii::app()->user->isGuest) { ?>
+			  	<!-- New comment box -->
+			  	<div class='pin-comment hidden new-comment'>
+				  	<!-- Comment Owner avatar -->
+			  		<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'pin-owner-avatar')) ?>
 				  	
-			  	<!-- Comment Owner avatar -->
-		  		<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'pin-owner-avatar')) ?>
-			  	
-			  	<!-- Comment -->
-			  	<div class='pin-comment-text'>
-					<textarea class='pin-new-comment-message' placeholder='Write your commet here.'></textarea>			  		
-			  	</div>
-			  	
-			  	<div class='pin-post-comment'>
-			  		<a class='submit-new-comment-button'>comment</a>
-			  	</div>
-			  </div>
-		  <?php } ?>
+				  	<!-- Comment -->
+				  	<div class='pin-comment-text'>
+						<textarea class='pin-new-comment-message' placeholder='Write your commet here.'></textarea>			  		
+				  	</div>
+				  	
+				  	<div class='pin-post-comment'>
+				  		<a class='submit-new-comment-button'>comment</a>
+				  	</div>
+				</div>
+		  	<?php } ?>
 		</div>
 
 	<?php } ?>  

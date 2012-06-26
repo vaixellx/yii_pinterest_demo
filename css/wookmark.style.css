@@ -10,6 +10,16 @@
     width: 250px;
 }
 
+.pin-items a {
+	color: #555555;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.pin-items a:hover {
+	color: #888888;	
+}
+
 .pin-images-container {
     width: 230px;
     padding: 10px 10px 0;
@@ -23,10 +33,9 @@
 	padding: 5px 10px;
 	font-size: 11px;
 	color: #8888aa;
-	margin: 0 -1px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #cccccc;
 	background-color: #eeeeee;
-	border: 1px solid #dddddd;
-	border-bottom-color: #cccccc;
 }
 
 .pin-like {
@@ -59,6 +68,23 @@
 .pin-description {
 	padding: 10px 10px;
 	color: #000000;
+	border-bottom: 1px solid #cccccc;
+}
+
+.pin-owner {
+	margin: 0 -1px;
+	padding: 10px;
+	min-height: 30px;
+}
+
+.pin-board {
+	font-size: 11px;
+	margin-top: 3px;
+	color: #aaaaaa;
+}
+
+.pin-board a {
+	color: #aaaaaa;
 }
 
 .pin-comment {
