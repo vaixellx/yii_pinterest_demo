@@ -26,7 +26,7 @@
 		<div id="logo"><?php echo CHtml::link(Yii::app()->params['siteName'], $BASE_URL) ?></div>
 		
 		<?php if(Yii::app()->user->isGuest) { ?>
-			<div class="header-menu" id='login_button'>Log in</div>
+			<div class="header-menu" id='login_button'><?php echo Yii::t('app', 'word.log_in') ?></div>
 		<?php } else { ?>
 			<div class='header-menu' id='profile_button' style='padding: 14px 5px;'> 
 				<?php echo CHtml::image(Yii::app()->user->avartar_path, 'UserAvartar', array('class' => 'header-user-avartar')) ?>
@@ -35,7 +35,7 @@
 			<div class="header-menu" id="enjoy_btn">Enjoy+</div>
 			
 		<?php } ?> 
-		<div class="header-menu">About</div>
+		<div class="header-menu"><?php echo Yii::t('app', 'word.about') ?></div>
 		<div><?php $this->widget('ext.LanguagePicker.ELanguagePicker', array('id'=>'language_picker')); ?></div>
 			
 	</div><!-- header -->
@@ -83,19 +83,19 @@
 		
 			<?php echo $form->passwordField($user, 'password', array('placeholder' => 'password')) ?>
 		
-			<?php echo CHtml::submitButton('Login') ?>
+			<?php echo CHtml::submitButton(Yii::t('app', 'word.log_in')) ?>
 			
 			<?php $this->endWidget() ?>
 	
 		</div>
 	<?php } else { ?>
 		<div id='profile_panel'>
-			<a class='disabled'>Invite friends</a>
-			<a class='disabled underline'>Find friends</a>
-			<a class='disabled'>Boards</a>
-			<a class='disabled'>Tips</a>
-			<a class='disabled'>Enjoy</a>
-			<?php echo CHtml::link('Profile', array('/user/logout'), array('class' => 'underline')) ?>
+			<a class='disabled'><?php echo Yii::t('app', 'word.invite_friends') ?></a>
+			<a class='disabled underline'><?php echo Yii::t('app', 'word.find_friends') ?></a>
+			<a class='disabled'><?php echo Yii::t('app', 'word.boards') ?></a>
+			<a class='disabled'><?php echo Yii::t('app', 'word.tips') ?></a>
+			<a class='disabled'><?php echo Yii::t('app', 'word.enjoy') ?></a>
+			<?php echo CHtml::link(Yii::t('app', 'word.profile'), array('/user/logout'), array('class' => 'underline')) ?>
 			<?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?>
 		</div>
 	<?php } ?>

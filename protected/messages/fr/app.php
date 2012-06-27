@@ -10,11 +10,26 @@ return array(
 	'model.user.firstname'=>'Prénom',
 	'model.user.lastname'=>'Nom de famille',
 	
-	'word.log_out'=>'Deconnexion',
+	'word.log_out'=>'Déconnexion',
+	'word.log_in' => 'Connecxion',
 	'word.they_inspire_you' => 'Ils vous inspirent',
 	'word.categories' => 'Catégories',
 	'word.the_top' => 'Les TOP',
 	'word.shopping' => 'Shopping',
-	'word.myvip' => 'MYVIP'
+	'word.myvip' => 'MYVIP',
+	'word.profile' => 'Votre profil',
+	'word.enjoy' => 'Enjoy',
+	'word.tips' => 'Vos Tips',
+	'word.boards' => 'Vos Boards',
+	'word.invite_friends' => 'Invitez des amis',
+	'word.find_friends' => 'Trouvez des amis',
+	'word.about' => 'A propos de',
+	'word.like' => 'Like',
+	'word.likes' => 'Likes',
+	'word.comment' => 'Comment',
+	'word.comments' => 'Comments',
+	
+	'login.email' => 'Email address',
+	'login.password' => 'Password'
 );
 ?>
