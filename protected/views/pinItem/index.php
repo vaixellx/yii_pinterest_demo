@@ -19,7 +19,7 @@
   		  	
 	        <!--Pinned Image-->
 	        <div class='pin-images-container' style='min-height: <?php echo 230 * $item->height / $item->width ?>px'>
- 		 		<div class='pin-item-popup-container'><div class='pin-item-popup'>hello</div></div>
+ 		 		<div class='pin-item-popup-ct'><div class='pin-item-popup'>hello</div></div>
  		 		<?php echo CHtml::link("<img src='$item->img_src' class='pin-images'>") ?>    
 	        </div>
 

@@ -9,8 +9,8 @@
 				'position': 'absolute',
 				'top': 0,
 				'left': 0,
-				'background-color': '#eeeeee',
-				'opacity': 0.7
+				'background-color': '#ffffff',
+				'opacity': 0.85
 			});
 			$('div[simplemodal=true]').hide().fadeIn(200);
 		}
