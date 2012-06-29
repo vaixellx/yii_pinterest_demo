@@ -2,5 +2,6 @@ development-bundle/*
 assets/*
 themes/*
 protected/runtime/*
+.DS_Store
 .settings/*
 .project
