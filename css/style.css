@@ -405,3 +405,64 @@ div.input , div.submit {
 	background-color: #ffffff;
 	font-weight: normal;
 }
+
+/*------------ Board --------------- */
+.user-board {
+	display: block;
+	float: left;
+	background-color: #CCC;
+	margin: 12px;
+	width: 250px;
+	height: 250px;
+	box-shadow: 1px 1px 5px 2px #AAA;
+}
+.board-link {
+	display: block; 
+	z-index: 1; 
+	width: 250px; 
+	height: 195px; 
+	opacity: 0;
+	position: absolute;
+}
+.user-board-header {
+	text-align: center;
+	padding: 8px;
+	font-weight: bold;
+}
+.user-board-count {
+	background-color: #888;
+	color: #DDD;
+	height: 12px;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+}
+.user-board-count a {
+	text-decoration: none;
+	color: #DDD;
+}
+.user-board-count a:hover {
+	color: #FFF;
+}
+.user-board-cover {
+	height: 145px;
+	background-color: #FFF;
+	overflow-y: hidden;
+}
+.user-board-cover img {
+	width: 100%;
+	margin-top: -20px;
+}
+.user-board-small {
+	margin-top: 3px;
+	background-color: #888;
+	height: 40px;
+	width: 100%;
+}
+.user-board-smallpic img {
+	display: inline-block;
+	width: 25%;
+	height: 40px;
+	background-color: #FFF;
+}

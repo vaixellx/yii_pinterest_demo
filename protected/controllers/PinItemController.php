@@ -47,5 +47,14 @@ class PinItemController extends Controller
 			'pinItems' => $pinItems
 		));
 	}
+	
+	public function actionBoard($id) {
+		$board = Board::model()->findByPk($id);		
+		$pinItems = $board->pinItems;
+		
+		$this->render('index', array(
+			'pinItems' => $pinItems
+		));
+	}
 
 }

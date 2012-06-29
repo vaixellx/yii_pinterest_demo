@@ -66,4 +66,26 @@ class Board extends Model
 			'category'=>Yii::t('app', 'model.board.category')
 		);
 	}
+	
+	public function getCoverImage() {
+		$pin_img = array();
+		$pins = PinItem::model()->findAll(array(
+						'condition'=>'board_id=:bid', 
+						'params'=>array(':bid'=>$this->id), 
+						'limit'=>5
+					));
+		foreach($pins as $pin) {
+			$pin_img[] = $pin->img_src;
+		}
+		return $pin_img;
+	}
+
+	public function beforeDelete() {
+		$pinitems = PinItem::model()->findAll('board_id=:bid', array(':bid'=>$this->id));
+		foreach($pinitems as $pinitem) {
+			$pinitem->delete();
+		}
+		
+		return parent::beforeDelete();
+	}
 }
