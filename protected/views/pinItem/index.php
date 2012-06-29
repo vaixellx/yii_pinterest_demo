@@ -33,7 +33,7 @@
 							echo CHtml::link($item->user->displayName(), array("user/$formattedName")); 
 						?>
 					</div>
-					<div class='pin-board'>onto <?php echo CHtml::link($item->board->title, '/board') ?></div>
+					<div class='pin-board'>onto <?php echo CHtml::link($item->board->title, array('/pinItem/board/'.$item->board->id)) ?></div>
 				</div>
 			</div>
 					
