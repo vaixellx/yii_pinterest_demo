@@ -1,0 +1,24 @@
+.custom-combobox {
+	font-size: 12px;
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid #dddddd;
+	background-color: #eeeeee;
+	height: 16px;
+}
+
+.custom-combobox:hover {
+	border: 1px solid #c2c2c2;
+	background-color: #e5e5e5;
+}
+
+.custom-combobox-button {
+	width: 16px;
+	height: 100%;
+	background-image: url(../images/combobox_arrow.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	float: right;
+}
+
+

@@ -14,7 +14,8 @@
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/script.js') ?>
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.wookmark.min.js') ?>
 	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.dropelm.js') ?>
-	
+	<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.simplemodal.js') ?>
+		
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -68,8 +69,6 @@
 
 	<div id="footer">
 	</div><!-- footer -->
-	
-	<div id='modal_layer'></div>
 	
 	<?php if(Yii::app()->user->isGuest) { ?>
 		<div id='login_form'>

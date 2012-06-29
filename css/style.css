@@ -236,16 +236,6 @@ div.input , div.submit {
 	font-weight: bold;
 }
 
-#modal_layer {
-	z-index: 500;
-	background-color: #EEEEEE;
-	opacity: 0.9;
-	position: absolute;
-	display:none;
-	top: 0;
-	left: 0;
-}
-
 .disabled-button {
 	background-color: #eeeeee !important;
 	color: #aaaaaa !important;

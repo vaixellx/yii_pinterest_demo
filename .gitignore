@@ -1,0 +1,6 @@
+development-bundle/*
+assets/*
+themes/*
+protected/runtime/*
+.settings/*
+.project
