@@ -95,7 +95,7 @@
 			<a class='disabled'>Boards</a>
 			<a class='disabled'>Tips</a>
 			<a class='disabled'>Enjoy</a>
-			<?php echo CHtml::link('Profile', array('/user/logout'), array('class' => 'underline')) ?>
+			<?php echo CHtml::link('Profile', array('/user/profile'), array('class' => 'underline')) ?>
 			<?php echo CHtml::link(Yii::t('app', 'word.log_out'), array('/user/logout')) ?>
 		</div>
 	<?php } ?>

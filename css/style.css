@@ -97,9 +97,18 @@ div.input , div.submit {
 }
 
 .shadow {
-	-moz-box-shadow: 0px 0px 5px #dddddd;
-	-webkit-box-shadow: 0px 0px 5px #dddddd;
-	box-shadow: 0px 0px 3px #dddddd;
+	-moz-box-shadow:    0px 5px 10px -3px #333;
+    -webkit-box-shadow: 0px 5px 10px -3px #333;
+    box-shadow:         0px 5px 10px -3px #333;
+}
+/* flash message */
+
+.flash-notice {
+	background-color: #bfe098;
+	padding: 10px 5px;
+	margin: 10px 15px;
+	border: 1px solid #b0ce8c;
+	color: #4c7f10;
 }
 
 /* Container */
@@ -109,13 +118,13 @@ div.input , div.submit {
 	padding: 0px;
 }
 
-.error-message, .notification-message, .warning-message {
+.error-message, .notification-message, .warning-message, .flash-error{
 	border: 1px solid #dddddd;
 	margin: 5px 15px;
 	padding: 10px 5px;
 }
 
-.error-message {
+.error-message, .flash-error {
 	border: 1px solid #ff8888;
 	background-color: #ffdddd;
 	color: #cc0000;
@@ -343,7 +352,6 @@ div.input , div.submit {
 		background-color: #DDDDDD;		
 		color: #333333;
 	}
-
 /* ------------Login----------*/
 #login_button.active-state, #profile_button.active-state{
 	background-color: #eeeeee;
@@ -387,8 +395,8 @@ div.input , div.submit {
 	position: absolute;
 	top: 0;
 	z-index: 1000;
-	-moz-box-shadow:    3px 3px 5px 6px #ccc;
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	-moz-box-shadow:    0px 5px 10px -3px #333;
+    -webkit-box-shadow: 0px 5px 10px -3px #333;
     box-shadow:         0px 5px 10px -3px #333;
 }
 
@@ -414,4 +422,12 @@ div.input , div.submit {
 #profile_panel a.disabled:hover {
 	background-color: #ffffff;
 	font-weight: normal;
+}
+/* profile */
+.avartar_frame {
+	background-color: #EEEEEE;
+	padding: 7px;
+	border: 1px solid #BBBBBB;
+	margin: 5px 5px -5px 0px;
+	display: inline-block;
 }

@@ -5,7 +5,9 @@
 	<!-- create form -->
 	<?php $form = $this->beginWidget('CActiveForm', array(
 			'enableClientValidation' => true,
-			'errorMessageCssClass' => 'error-message'
+			'enableAjaxValidation' => true,
+			'errorMessageCssClass' => 'error-message',
+			'htmlOptions' => array('enctype'=>'multipart/form_data')
 	)); ?>
     
     <!-- email -->
@@ -34,6 +36,12 @@
     	<?php echo $form->labelEx($user, 'lastname') ?>
     	<?php echo $form->textField($user, 'lastname') ?>
     	<?php echo $form->error($user, 'lastname') ?>
+    </div>
+    
+     <div class='input'>
+    	<?php echo $form->labelEx($user, 'avartar_src') ?>
+    	<?php echo $form->fileField($user, 'avartar_src') ?>
+    	<?php echo $form->error($user, 'avartar_src') ?>
     </div>
     
     <div class='input'>
