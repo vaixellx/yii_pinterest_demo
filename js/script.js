@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
 	$('.link-ct').each(function(index, element) {
 		$(element).click(function(){
 			window.location = $(element).find('a').attr('href');
@@ -15,14 +15,11 @@ $(document).ready(function(){
 		 $('#enjoy_dialog').css('top', $(window).height()/2-120);
 		 $('#enjoy_dialog').slideDown(1000);
 		 
-		 $('#modal_layer').css('width', $(window).width());
-		 $('#modal_layer').css('height', $(window).height());
-		 
-		 $('#modal_layer').fadeIn();
+		 $('#page').simplemodal(true);
 		 
 		 $('.dialog-close-btn').click(function() {
 		 	$('#enjoy_dialog').slideUp(500);
-		 	$('#modal_layer').fadeOut();
+		 	$('#page').simplemodal(false);
 		 });
 		 
 	});

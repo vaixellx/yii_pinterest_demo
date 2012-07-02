@@ -245,16 +245,6 @@ div.input , div.submit {
 	font-weight: bold;
 }
 
-#modal_layer {
-	z-index: 500;
-	background-color: #EEEEEE;
-	opacity: 0.9;
-	position: absolute;
-	display:none;
-	top: 0;
-	left: 0;
-}
-
 .disabled-button {
 	background-color: #eeeeee !important;
 	color: #aaaaaa !important;
@@ -369,8 +359,8 @@ div.input , div.submit {
 }
 
 #login_form input[type=text], #login_form input[type=password] {
-	height: 10px;
 	width: 190px;
+	padding: 3px;
 	margin: 10px 0 0 0;
 }
 
@@ -423,6 +413,7 @@ div.input , div.submit {
 	background-color: #ffffff;
 	font-weight: normal;
 }
+
 /* profile */
 .avartar_frame {
 	background-color: #EEEEEE;
@@ -430,4 +421,91 @@ div.input , div.submit {
 	border: 1px solid #BBBBBB;
 	margin: 5px 5px -5px 0px;
 	display: inline-block;
+}
+
+/*------------ Board --------------- */
+.user-board {
+	display: block;
+	float: left;
+	background-color: #CCC;
+	margin: 12px;
+	width: 251px;
+	box-shadow: 1px 1px 5px 0px #cccccc;
+	border: 1px solid #cccccc;
+}
+
+.board-link {
+	display: none;
+}
+
+.user-board-header {
+	border-top: 1px solid white;
+	border-bottom: 1px solid #cccccc;
+	text-align: center;
+	padding: 8px;
+	font-weight: bold;
+	background-color: #fafafa;
+}
+
+.user-board-count {
+	border-top: 1px solid white;
+	border-bottom: 1px solid #cccccc;
+	background-color: #eeeeee;
+	color: #555555;
+	height: 12px;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+.user-board-header a, .user-board-count a {
+	text-decoration: none;
+	color: #555555;
+}
+.user-board-header a:hover, .user-board-count a:hover {
+	color: #888888;
+}
+.user-board-cover {
+	height: 180px;
+	background-color: #ffffff;
+	overflow-y: hidden;
+}
+.user-board-cover img {
+	width: 100%;
+}
+
+.user-board-small {
+	border-top: 1px solid white;
+	background-color: #dddddd;
+	height: 62px;
+	width: 100%;
+}
+
+.user-board-smallpic {
+	display: inline-block;
+	width: 62px;
+	height: 100%;
+	float: left;
+	border-right: 1px solid white;
+}
+
+.user-board-smallpic-last {
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+	float: left;
+	border-width: 0px !important;	
+}
+
+.user-board-smallpic img, .user-board-smallpic-last img {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+}
+
+.link-ct {
+	cursor: pointer;
+>>>>>>> 8c4863409352c071793154f9cbe59bcc00d80105
 }

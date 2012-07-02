@@ -56,5 +56,14 @@
 			
 			return false;
 		}
+		
+		public function beforeDelete() {
+			$comments = Comment::model()->findAll('pin_item_id=:pid', array(':pid'=>$this->id));
+			foreach($comments as $comment) {
+				$comment->delete();
+			}
+			
+			return parent::beforeDelete();
+		}
 	}
 ?>

@@ -23,14 +23,39 @@ class BoardController extends Controller
 		));
 	}
 
-	public function actionEdit()
+	public function actionEdit($id)
 	{
-		$this->render('edit');
+		$board = Board::model()->findByPk($id);
+		$criteria = new CDbCriteria;
+		$criteria->order = 'title ASC';
+		$categories = Category::model()->findAll($criteria);
+		
+		if(isset($_POST['Board'])) {
+			$board->attributes = $_POST['Board'];
+			
+			if($board->save()) {
+				$this->redirect(array('index'));
+			}
+		}
+		
+		$this->render('edit', array(
+			'board'=>$board, 
+			'categories' => $categories,
+		));
 	}
 
 	public function actionIndex()
 	{
-		$this->render('index');
+		$boards = Board::model()->findAll('user_id=:uid', array(':uid'=>Yii::app()->user->getId()));
+		$this->render('index', array('boards'=>$boards));
+	}
+	
+	public function actionDelete($id)
+	{
+		$board = Board::model()->findByPk($id);		
+		if($board->delete()) {
+			$this->redirect(array('index'));
+		}
 	}
 
 	// Uncomment the following methods and override them if needed
